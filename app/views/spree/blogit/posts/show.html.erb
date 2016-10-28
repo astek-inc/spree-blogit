@@ -1,6 +1,5 @@
 <%= link_to '← All Blog Posts', blog_root_path, class: 'blogit-return'  %>
 
-<% title @post.title %>
 <% description @post.description.to_s %>
 
 <%= content_tag(:article, id: "blogit_post_#{@post.id}", class: "blogit_post") do %>
@@ -28,5 +27,3 @@
   <%= comments_for_post @post %>
 
 <% end %>
-
-<%#= debug @post %>

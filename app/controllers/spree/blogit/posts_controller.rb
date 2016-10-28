@@ -28,6 +28,7 @@ module Spree
       #
       # Returns nil
       def index
+        @title = 'Blog'
         respond_to do |format|
           format.xml  { set_posts_for_feed }
           format.rss  { set_posts_for_feed }
@@ -40,6 +41,7 @@ module Spree
       #
       # Yields #post if called with a block (useful for calling super from subclasses)
       def show
+        @title = "Blog | #{@post.title}"
         set_post
         yield post if block_given?
       end
@@ -49,6 +51,7 @@ module Spree
       #
       # Yields #posts if called with a block (useful for calling super from subclasses)
       def tagged
+        @title = "Blog | Posts Tagged With \"#{params[:tag]}\""
         set_posts_for_tagged_page
         yield(posts) if block_given?
         render :index
