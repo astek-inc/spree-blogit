@@ -41,8 +41,8 @@ module Spree
       #
       # Yields #post if called with a block (useful for calling super from subclasses)
       def show
-        @title = "Blog | #{@post.title}"
         set_post
+        @title = "Blog | #{@post.title}"
         yield post if block_given?
       end
 
