@@ -61,14 +61,9 @@ module Spree
         active.order('created_at DESC')
       end
 
-      # Finds an active post with given id
-      #
-      # id - The id of the Post to find
-      #
-      # Returns a Blogit::Post
-      # Raises ActiveRecord::NoMethodError if no Blogit::Post could be found
+      # Raises ActiveRecord::RecordNotFound if no post found
       def self.active_with_id(title)
-        active.find_by_slug(title)
+        active.find_by!(slug: title)
       end
 
       # ====================

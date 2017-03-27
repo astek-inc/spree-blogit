@@ -4,6 +4,8 @@ module Spree
     # Handles requests for viewing Blogit::Posts
     class PostsController < Spree::Blogit::ApplicationController
 
+      rescue_from ActiveRecord::RecordNotFound, with: :render_404
+
       # The current Blogit::Post being displayed.
       #
       # Returns a Blogit::Post with id from params
