@@ -2,17 +2,14 @@
 
 $:.push File.expand_path("../lib", __FILE__)
 
-# Maintain your gem's version:
-require "spree_blogit/version"
-
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_blogit'
-
-  s.version     = SpreeBlogit::VERSION
+  s.version     = '0.0.12'
 
   s.summary     = "A mountable Rails blog for Rails applications, adapted for Spree Commerce"
   s.description = "Add a blog to your Spree Commerce application"
+
   s.required_ruby_version = '>= 2.0.0'
 
   s.author    = 'Edwin Horneij'
